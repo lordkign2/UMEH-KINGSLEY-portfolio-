@@ -2,11 +2,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="port.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
   <title>Umeh Kingsley Ifeanyi - Portfolio</title>
- 
 </head>
+<style> 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+header {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #34495e;
+  padding: 0.5rem 0;
+}
+nav ul li {
+  margin: 0 1rem;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background: #2c3e50;
+  color: #f1c40f;
+  border-radius: 5px;
+}
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+.section {
+  margin-bottom: 3rem;
+}
+.section h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #333;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.project {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.project h3 {
+  margin-bottom: 0.5rem;
+  color: #2980b9;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background: #2c3e50;
+  color: #fff;
+}
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/*-------------About--------------*/
+#about {
+  padding: 80px 0;
+  color: #333;
+}
+.row-about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about-col-1 {
+  flex-basis: 35%;
+}
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+.about-col-2 {
+ flex-basis: 60%;
+}
+.about-col-2 p {
+  margin: 1rem auto;
+ }
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #333;
+}
+.tab-titles {
+  display: flex;
+  margin: 20px 0 0px;
+}
+.tab-links {
+  
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #2980b9;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+.tab-links.active-link::after {
+  width: 50%;
+}
+.tab-contents ul li {
+  list-style-type: none;
+  margin: 10px 0;
+}
+.tab-contents ul li span {
+  color: #2980b9;
+  font-size: 14px;
+}
+.tab-contents {
+  display: none;
+}
+.tab-contents.active-tab {
+  display: block;
+}
+/* -------------------contact----------------- */
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact-left {
+  flex-basis: 35%;
+
+}
+.contact-right {
+  flex-basis: 60%;
+  
+}
+.contact-left p {
+  margin-top: 30px;
+}
+.contact-left p i {
+  color:#4ca1af;
+  margin-right: 15px;
+  font-size: 25px;
+
+}
+.social-icons {
+  margin-top: 30px;
+}
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+ 
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.social-icons a:hover {
+  color: #4ca1af;
+  transform: translateY(-5px);
+}
+.btn.btn2 {
+  padding: 7px;
+  border-radius: 5px;
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+.contact-right form {
+  width: 100%;
+
+}
+form input, form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);;
+  padding: 15px;
+  margin: 15px 0;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 6px;
+}
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px){
+  .contact-left, .contact-right{
+    flex-basis: 100%;
+  }
+  .about-col-2{
+    flex-basis: 100%;
+    font-size: 14px;
+  }
+  html .container {
+    font-size: 14px;
+  }
+  form input textarea .btn2 {
+    font-size: 14px;
+  }
+  .social-icons a{
+    font-size: 14px;
+  }
+  
+}
+</style>
 <body>
   <header>
     <h1>Umeh Kingsley Ifeanyi</h1>
